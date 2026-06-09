@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agrinho 2026 - Agro Forte Futuro Sustentável</title>
+
+<style>
+body{
+margin:0;
+font-family:Arial;
+background:#f1fff1;
+color:#222;
+}
+
+header{
+background:linear-gradient(135deg,#1b5e20,#43a047);
+color:white;
+padding:30px;
+text-align:center;
+}
+
+nav{
+background:#2e7d32;
+padding:10px;
+text-align:center;
+position:sticky;
+top:0;
+}
+
+nav a{
+color:white;
+margin:10px;
+text-decoration:none;
+font-weight:bold;
+}
+
+section{
+max-width:1100px;
+margin:auto;
+padding:30px;
+}
+
+.banner img{
+width:100%;
+border-radius:15px;
+height:400px;
+object-fit:cover;
+}
+
+.card{
+background:white;
+padding:15px;
+margin:10px;
+border-radius:12px;
+box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:15px;
+}
+
+button{
+background:#2e7d32;
+color:white;
+border:none;
+padding:10px 15px;
+border-radius:8px;
+cursor:pointer;
+margin:5px;
+}
+
+button:hover{
+background:#1b5e20;
+}
+
+#personagem{
+position:fixed;
+bottom:20px;
+right:20px;
+background:white;
+padding:15px;
+border-radius:15px;
+box-shadow:0 0 15px rgba(0,0,0,0.2);
+width:220px;
+font-size:14px;
+}
+
+#robo{
+font-size:30px;
+text-align:center;
+}
+
+.quizBox, .jogoBox{
+background:white;
+padding:20px;
+border-radius:15px;
+box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+
+footer{
+background:#1b5e20;
+color:white;
+text-align:center;
+padding:20px;
+margin-top:40px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>🌱 Agro Forte, Futuro Sustentável</h1>
+<p>Equilíbrio entre o Campo e o Meio Ambiente</p>
+</header>
+
+<nav>
+<a href="#inicio">Início</a>
+<a href="#agro">Agro</a>
+<a href="#toxicos">Agrotóxicos</a>
+<a href="#quiz">Quiz</a>
+<a href="#jogo">Jogo</a>
+</nav>
+
+<section id="inicio" class="banner">
+<img src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854?w=1200">
+</section>
+
+<section>
+<h2>🌾 Bem-vindo ao Agrinho</h2>
+<p>
+Este site ensina sobre agricultura sustentável, tecnologia no campo e preservação ambiental.
+</p>
+</section>
+
+<section id="agro">
+<h2>🌱 Agricultura Sustentável</h2>
+
+<div class="grid">
+
+<div class="card">🌳 Preservar florestas garante equilíbrio climático.</div>
+<div class="card">💧 Uso consciente da água evita desperdício.</div>
+<div class="card">🚜 Tecnologia aumenta produção com menos impacto.</div>
+<div class="card">♻️ Sustentabilidade garante futuro melhor.</div>
+
+</div>
+</section>
+
+<section id="toxicos">
+<h2>☠️ Agrotóxicos</h2>
+
+<p>
+Agrotóxicos ajudam a controlar pragas, mas podem causar problemas ambientais quando usados de forma errada.
+</p>
+
+<ul>
+<li>Contaminação da água</li>
+<li>Risco à saúde humana</li>
+<li>Danos aos insetos polinizadores</li>
+</ul>
+
+<h3>🌿 Alternativas</h3>
+<ul>
+<li>Controle biológico</li>
+<li>Adubação natural</li>
+<li>Rotação de culturas</li>
+<li>Manejo sustentável</li>
+</ul>
+</section>
+
+<section id="quiz">
+<h2>❓ Quiz Sustentável</h2>
+
+<div class="quizBox">
+
+<p id="pergunta">Qual ajuda o meio ambiente?</p>
+
+<button onclick="responder(true)">🌳 Plantar árvores</button>
+<button onclick="responder(false)">🔥 Desmatar</button>
+
+<p id="resposta"></p>
+<p>Pontos: <span id="pontos">0</span></p>
+
+</div>
+</section>
+
+<section id="jogo">
+<h2>🎮 Jogo: Reflorestamento</h2>
+
+<div class="jogoBox">
+
+<p>Clique para plantar árvores e salvar o planeta!</p>
+
+<button onclick="plantar()">🌱 Plantar</button>
+
+<h3 id="contador">0 árvores</h3>
+
+</div>
+</section>
+
+<footer>
+<p>🌱 Projeto Agrinho 2026</p>
+</footer>
+
+<!-- PERSONAGEM -->
+<div id="personagem">
+<div id="robo">🤖</div>
+<p id="fala">Olá! Eu sou seu guia. Explore o site!</p>
+<button onclick="falar()">Falar 💬</button>
+</div>
+
+<script>
+
+let pontos = 0;
+let arvores = 0;
+
+function responder(certa){
+if(certa){
+document.getElementById("resposta").innerHTML = "✅ Correto!";
+pontos++;
+}else{
+document.getElementById("resposta").innerHTML = "❌ Tente novamente!";
+}
+document.getElementById("pontos").innerHTML = pontos;
+}
+
+function plantar(){
+arvores++;
+document.getElementById("contador").innerHTML = arvores + " árvores 🌱";
+}
+
+let mensagens = [
+"Plantar árvores ajuda o planeta!",
+"Agrotóxicos devem ser usados com cuidado!",
+"A agricultura sustentável protege o futuro!",
+"Use tecnologia para produzir sem destruir!"
+];
+
+function falar(){
+let i = Math.floor(Math.random() * mensagens.length);
+document.getElementById("fala").innerHTML = mensagens[i];
+}
+
+</script>
+
+</body>
+</html>
